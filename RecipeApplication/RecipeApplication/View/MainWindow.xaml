@@ -1,0 +1,30 @@
+﻿<Window x:Class="RecipeApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipeApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titel -->
+        <TextBlock Text="Recipe Application" HorizontalAlignment="Center" FontSize="24" Margin="0,10,0,0"/>
+
+        <!-- Liste over opskrifter -->
+        <ListBox Grid.Row="1" Margin="20" Name="recipeListBox" SelectionChanged="recipeListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Margin="0,5"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Opret knap -->
+        <Button Content="Create" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" Click="Create_Click"/>
+    </Grid>
+</Window>
