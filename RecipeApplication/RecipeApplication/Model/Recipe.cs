@@ -8,19 +8,13 @@ namespace RecipeApplication.Model
 {
     public class Recipe
     {
-        private string name;
-        private string instruction;
+        public string Name { get; set; }
+        public string Description { get; set; }
 
-        public string Name
+        public Recipe(string name, string description)
         {
-            get { return name; }
-            set {  name = value; }
-        }
-       
-        public string Instruction
-        {
-            get { return instruction; }
-            set { instruction = value; }
+            Name = name;
+            Description = description;
         }
     }
 }
