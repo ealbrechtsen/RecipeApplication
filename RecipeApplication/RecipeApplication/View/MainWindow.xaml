@@ -11,20 +11,16 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
 
         <!-- Titel -->
-        <TextBlock Text="Recipe Application" HorizontalAlignment="Center" FontSize="24" Margin="0,10,0,0"/>
-
-        <!-- Liste over opskrifter -->
-        <ListBox Grid.Row="1" Margin="20" Name="recipeListBox" SelectionChanged="recipeListBox_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Name}" Margin="0,5"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-        <!-- Opret knap -->
-        <Button Content="Create" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" Click="Create_Click"/>
+        <TextBlock Text="Kitchen Canvas" HorizontalAlignment="Center" FontSize="20
+                   " Margin="0,10,0,0"/>
+        
     </Grid>
 </Window>
