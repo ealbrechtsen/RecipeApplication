@@ -20,5 +20,15 @@ namespace RecipeApplication.Views
         {
             InitializeComponent();
         }
+
+        private void tbName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbDescription_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
