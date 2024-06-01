@@ -11,45 +11,76 @@
     mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
-            <!-- Venstre kolonne til menu -->
+            <ColumnDefinition Width="100" />
+            <!--  Venstre kolonne til menu  -->
             <ColumnDefinition Width="*" />
-            <!-- Højre kolonne til indhold -->
+            <!--  Højre kolonne til indhold  -->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <!-- Række til titel -->
+            <!--  Række til titel  -->
             <RowDefinition Height="*" />
-            <!-- Række til menu og indhold -->
+            <!--  Række til menu og indhold  -->
         </Grid.RowDefinitions>
 
-        <!-- Titel -->
+        <!--  Titel  -->
         <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
             Margin="10"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="20"
-            Text="Kitchen Canvas"
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"/>
+            FontSize="14"
+            Text="Kitchen Canvas" />
 
-        <!-- Menu område -->
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+        <!--  Menu område  -->
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="10">
             <TextBlock
                 Margin="0,0,0,10"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="center"
                 FontSize="14"
                 Text="Menu" />
-            <Button Content="Menu Item 1" Margin="0,5,0,0"/>
-            <Button Content="Menu Item 2" Margin="0,5,0,0"/>
-            <Button Content="Menu Item 3" Margin="0,5,0,0"/>
-            <!-- Tilføj flere menupunkter her -->
+            <Button Margin="0,5,0,0" Content="Menu 1" />
+            <Button Margin="0,5,0,0" Content="Menu 2" />
+            <Button Margin="0,5,0,0" Content="Menu 3" />
+            <!--  Tilføj flere menupunkter her  -->
         </StackPanel>
 
-        <!-- Indhold område -->
-        <Grid Grid.Row="1" Grid.Column="1" Margin="10" Background="LightGray">
-            <!-- Indsæt her de elementer, der skal vises i højre side -->
-        </Grid>
+        <!--  Indhold område  -->
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="10"
+            Background="LightGray">
+            <TextBlock
+                Margin="0,0,0,10"
+                FontSize="16"
+                Text="Create a new recipe" />
+
+            <TextBlock Margin="0,5,0,0" Text="Name:" />
+            <TextBox
+                x:Name="tbName"
+                Width="200"
+                Margin="0,5,0,10" />
+
+            <TextBlock Margin="0,5,0,0" Text="Description:" />
+            <TextBox
+                x:Name="tbDescription"
+                Width="200"
+                Height="100"
+                Margin="0,5,0,10"
+                AcceptsReturn="True" />
+
+            <Button
+                Width="100"
+                Click="CreateRecipe_Click"
+                Content="Save" />
+        </StackPanel>
+
     </Grid>
 </Window>
