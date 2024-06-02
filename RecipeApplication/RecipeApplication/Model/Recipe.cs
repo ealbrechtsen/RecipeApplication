@@ -8,11 +8,13 @@ namespace RecipeApplication.Model
 {
     public class Recipe
     {
+        public int RecipeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public Recipe(string name, string description)
+        public Recipe(int recipeId, string name, string description)
         {
+            RecipeId = recipeId;
             Name = name;
             Description = description;
         }

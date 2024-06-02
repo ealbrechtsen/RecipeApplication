@@ -16,12 +16,18 @@ namespace RecipeApplication.Persistence
 {
     public class RecipeRepository
     {
-        public string ConnnectionString { get; set; }
-        public void Create(Recipe recipe)
+        public string ConnectionString { get; set; }
+        public void Create(Recipe r)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Recipe(Name, Description)"
+                    + "VALUES (@Name, @Description)"
+                    + "SELECT (@@IDENTITY)", con);
+                cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = r.Name;
+                cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = r.Description;
+                r.RecipeId = Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
         RecipeRepository()
