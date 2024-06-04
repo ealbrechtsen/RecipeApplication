@@ -1,0 +1,39 @@
+﻿<Window x:Class="RecipeApplication.Views.CreateRecipeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecipeApplication.Views"
+        mc:Ignorable="d"
+        Title="CreateRecipeDialog" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            
+        <TextBlock
+            
+                Margin="0,0,0,10"
+                FontSize="16"
+                Text="Create a new recipe" />
+
+        <TextBlock Margin="0,5,0,0" Text="Name:" />
+        <TextBox
+                x:Name="tbName"
+                Width="200"
+                Margin="0,5,0,10" TextChanged="tbName_TextChanged" />
+
+        <TextBlock Margin="0,5,0,0" Text="Description:" />
+        <TextBox
+                x:Name="tbDescription"
+                Width="200"
+                Height="100"
+                Margin="0,5,0,10"
+                AcceptsReturn="True" />
+
+        <Button
+                x:Name="btnSaveRecipe"
+                Width="100"
+                Content="Save" />
+            <StackPanel></StackPanel>
+</StackPanel>
+    </Grid>
+</Window>

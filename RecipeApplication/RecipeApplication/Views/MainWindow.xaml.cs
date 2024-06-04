@@ -8,27 +8,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RecipeApplication.Views;
+using RecipeApplication.ViewModel;
+using RecipeApplication.Model;
 
 namespace RecipeApplication.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
+        MainViewModel mvm;
+        CreateRecipeDialog CreateRecipeDialog;
+
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void tbName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void tbDescription_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            mvm = new MainViewModel(CreateRecipeDialog);
         }
     }
 }

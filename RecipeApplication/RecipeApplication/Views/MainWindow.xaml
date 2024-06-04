@@ -57,29 +57,6 @@
             Grid.Column="1"
             Margin="10"
             Background="LightGray">
-            <TextBlock
-                Margin="0,0,0,10"
-                FontSize="16"
-                Text="Create a new recipe" />
-
-            <TextBlock Margin="0,5,0,0" Text="Name:" />
-            <TextBox
-                x:Name="tbName"
-                Width="200"
-                Margin="0,5,0,10" TextChanged="tbName_TextChanged" />
-
-            <TextBlock Margin="0,5,0,0" Text="Description:" />
-            <TextBox
-                x:Name="tbDescription"
-                Width="200"
-                Height="100"
-                Margin="0,5,0,10"
-                AcceptsReturn="True" TextChanged="tbDescription_TextChanged" />
-
-            <Button
-                Width="100"
-                Click="CreateRecipe_Click"
-                Content="Save" />
         </StackPanel>
 
     </Grid>
