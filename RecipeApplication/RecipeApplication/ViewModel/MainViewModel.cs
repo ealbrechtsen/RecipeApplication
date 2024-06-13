@@ -10,7 +10,12 @@ namespace RecipeApplication.ViewModel
 {
     public class MainViewModel
     {
-
         public ObservableCollection<RecipeVM> recipeVMs { get; set; }
+        public MainViewModel(CreateRecipeDialogVM? createRecipeDialogVM)
+        {
+
+        }
+
+
     }
 }

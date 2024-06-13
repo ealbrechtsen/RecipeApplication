@@ -16,7 +16,19 @@ namespace RecipeApplication.Persistence
 {
     public class RecipeRepository
     {
-        public string ConnectionString { get; set; }
+
+        private List <Recipe> recipes { get; set; }
+        public string? ConnectionString { get; set; }
+
+        RecipeRepository(List <Recipe> recipes)
+        {
+            IConfigurationRoot config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            ConnectionString = config.GetConnectionString("MyDBConnection");
+            // uses "this" keyword to differentiate parameter from field
+            this.recipes = recipes;
+        
+        }
+
         public void Create(Recipe r)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -27,14 +39,9 @@ namespace RecipeApplication.Persistence
                     + "SELECT (@@IDENTITY)", con);
                 cmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = r.Name;
                 cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = r.Description;
+                
                 r.RecipeId = Convert.ToInt32(cmd.ExecuteScalar());
             }
-        }
-        RecipeRepository()
-        {
-            IConfigurationRoot config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-
-            string? ConnectionString = config.GetConnectionString("MyDBConnection");
         }
     }
 }

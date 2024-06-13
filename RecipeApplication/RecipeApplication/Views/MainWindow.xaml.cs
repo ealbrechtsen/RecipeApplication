@@ -18,12 +18,14 @@ namespace RecipeApplication.Views
     public partial class MainWindow : Window
     {
         MainViewModel mvm;
-        CreateRecipeDialog CreateRecipeDialog;
+        CreateRecipeDialog createRecipeDialog;
+        CreateRecipeDialogVM createRecipeDialogVM;
 
         public MainWindow()
         {
             InitializeComponent();
-            mvm = new MainViewModel(CreateRecipeDialog);
+            mvm = new MainViewModel(createRecipeDialogVM);
+            DataContext = mvm;
         }
     }
 }
